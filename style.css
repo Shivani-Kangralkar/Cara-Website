@@ -75,64 +75,36 @@ body{
 } 
 
 
-/* Header Section Code */
 
-.header{
+.container{
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+}
+
+/* navbar Header */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: #e3e6f3;
     box-shadow: 0 5px 15px rgba(0, 0, 0,0.06);
-    z-index: 999;
-    position: sticky;
-    top:0;
-    left:0;
 }
-nav{
+.nav{
     display: flex;
-    padding: 2% 3%;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 20px 0 ;
 }
-
-nav img{
-    width: 150px;
-}
-
-.menu{
-    flex: 1;
-    text-align: right;
-    margin-right: 20px;
-    position: relative;
-}
-
-.menu ul li{
-    list-style: none;
-    display: inline-block;
-    padding: 8px 20px;
-    position: relative;
-}
-
-.menu ul li a{
-    text-decoration: none;
-    font-size: 16px;
-    font-weight:500;
-    color: #1a1a1a;
-    /* Below code is for smoth hover change color effect */
-    transition: 0.3s ease;
-}
-
-.menu  li a:hover,.menu li a.active{
+.logo{
+    font-size: 1.1rem;
     color: #088178;
+    font-weight: 400;
 }
-
-.menu li a.active::after,.menu li a:hover::after
-{
-    content: "";
-    width: 30%;
-    height: 2px;
-    background-color: #088178;
-    position: absolute;
-    bottom: -4px;
-    left: 20px;
-
+#cart-icon{
+    font-size: 1.8rem;
+    cursor: pointer;
 }
 
 /* Below Line of code is for Hero Section */
@@ -141,7 +113,7 @@ nav img{
 {
     background-image: url("img/hero4.png");
     height: 90vh;
-    width: 100%;
+    width: 205vh;
     background-size: cover;
     background-position: top 25% right 0;
     padding: 0px 80px;
@@ -303,7 +275,7 @@ nav img{
     color: #088178;
 }
 
-.product1 .pro .cart{
+.product1 .pro .art{
     width: 40px;
     height: 40px;
     line-height: 40px;
@@ -565,37 +537,114 @@ footer .copyright{
     font-weight: 600;
 }
 
-/* #mobile{
-    display: none;
-} */
 
-/* Media Query */
 
-/* @media (max-width:799px) {
-   
-    .menu {
-        position: absolute;
-        background-color: #E3E6F3;
-        height: 100vh;
-        width: 200px;
-        top: 0;
-        right:0;
-        text-align: left;
-        padding: 20px 0 0 10px;  
-    }
+/* Cart  */
 
-    .menu ul li {
-        display: block;
-        padding-top: 40px;
-    }
+  .cart{
+    position: fixed;
+    top:0;
+    right: -100%;
+    width:400px;
+    min-height: 100vh;
+    padding: 20px;
+    background: #f0f5f4;
+    box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+} 
 
-    #mobile{
-       display: flex;
-    }
+ .cart.active{
+   right:0; 
+} 
 
-    #mobile i{
-        font-size: 24px;
-        padding-left: 20px;
-     }
+.cart-title{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
 
-} */
+.cart-product-title{
+    font-size: 1rem;
+}
+
+.cart-box{
+    display: grid;
+    grid-template-columns: 32% 45% 14%;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.cart-img{
+    width:100px;
+    height:100px;
+    object-fit: contain;
+    padding: 10px;
+    
+}
+
+.description{
+    display: grid;
+    row-gap: 0.5rem;
+}
+
+.cart-price{
+    font-weight: 500;
+}
+
+.cart-quantity{
+    border: 1px solid black;
+    outline-color: var(--main-color);
+    width:2.4rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.cart-remove{
+    font-size: 24px;
+    color: rgb(252, 67, 67);
+    cursor: pointer;
+    
+}
+
+.total{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    border-top: 1px solid black;
+}
+
+.total-title{
+    font-size: 1rem;
+    font-weight: 600;
+}
+.total-price{
+    margin-left: 0.6rem;
+}
+
+.btn-buy{
+    display: flex;
+    margin: 1.5rem auto 0 auto;
+    padding: 12px 20px;
+    border: none;
+    background:  rgb(230, 73, 73);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-buy:hover{
+    background:rgb(240, 11, 11)
+}
+
+#close-cart{
+    position: absolute;
+    top:1rem;
+    right:0.8rem;
+    font-size: 1rem;
+    color:rgb(133, 128, 128);
+    cursor: pointer;
+}
+
+
